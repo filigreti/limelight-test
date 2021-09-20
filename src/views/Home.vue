@@ -1,5 +1,5 @@
 <template>
-  <div class=" min-h-screen  pb-5 ">
+  <div class=" min-h-screen relative  pb-5 ">
     <div class="border-b  border-gray-300 lg:mx-auto   ">
       <div
         class=" border-r border-gray-300 w-16 md:w-16 lg:w-full lg:container  lg:border-r-0 lg:mx-auto "
@@ -11,8 +11,8 @@
         />
       </div>
     </div>
-    <div class=" lg:border-b  lg:-mt-px ">
-      <div class="lg:flex lg:container lg:mx-auto   lg:w-full">
+    <div class=" lg:border-b relative  lg:-mt-px ">
+      <div class="lg:flex lg:container lg:mx-auto relative  lg:w-full">
         <div
           class="lg:flex lg:justify-between  lg:items-center lg:w-full lg:border-l  border-gray-300   "
         >
@@ -54,14 +54,14 @@
       <Loading v-if="loading" />
       <!-- class="px-2 mt-5 flex md:inline-flex md:gap-5  flex-col md:flex-row flex-wrap md:justify-between  " -->
       <div
-        class="flex flex-wrap   md:justify-between mt-5 mx-2   "
+        class=" px-2 mt-5 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-2 lg:grid-cols-4 lg:gap-5  mb-10  "
         v-else-if="displayedProducts && displayedProducts.length"
       >
         <Products
           v-for="items in displayedProducts"
           :key="items"
           :items="items"
-          class=" md:w-specific mb-2 lg:w-productWidth "
+          class=" "
         />
       </div>
       <div
@@ -75,7 +75,7 @@
       </div>
       <div
         v-if="displayedProducts && displayedProducts.length"
-        class="flex items-center px-2 mt-5"
+        class="flex items-center px-2 mt-5 lg:absolute fixed md:absolute bottom-0 flex-1 lg:mb-5  md:mb-5 container lg:mx-auto bg-white "
       >
         <button
           @click="previousPage"
